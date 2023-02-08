@@ -1,0 +1,85 @@
+abstract class Employee
+{
+    int empid;
+    String empName;
+    Employee(int eid, String eName)
+    {
+        empid=eid;
+        empName=eName;
+    }
+    
+    public abstract void netSalary();
+    
+    public void display()
+    {
+        System.out.println("Employee id = "+empid);
+        System.out.println("Employee id = "+empName);
+        
+    }
+    
+}
+
+class Manager extends Employee
+{
+    String bankName;
+    int Salary;
+    Manager(int eid, String eName, String bn)
+    {
+        super(eid,eName);
+        bankName=bn;
+        
+    }
+    
+ public void netSalary()
+ {
+    Salary=80000;
+ }
+ 
+ public void display()
+ {
+     super.display();
+     System.out.println("bank Name = "+bankName);
+     System.out.println("Salary  = "+Salary);
+ }
+}
+
+class Clerk extends Employee
+{
+    String companyName;
+    int Salary;
+    Clerk(int eid, String eName, String cm)
+    {
+        super(eid,eName);
+        companyName=cm;
+        
+    }
+    
+ public void netSalary()
+ {
+    Salary=55000;
+ }
+ 
+ public void display()
+ {
+     super.display();
+     System.out.println("companyName  = "+companyName);
+     System.out.println("Salary  = "+Salary);
+ }
+}
+
+
+
+public class Main {
+    public static void main(String args[])
+    {
+        Manager m1 = new Manager(101, " kavna","SBI");
+        m1.netSalary();
+        m1.display();
+        
+        Clerk c1 = new Clerk(102,"bindu","icic");
+        c1.netSalary();
+        c1.display();
+    }
+}
+
+
